@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>快站</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    ul li {             /*五角星样式*/
+        list-style: none;
+        float:left; 
+        font-size:30px; 
+        margin:5px; 
+        color:#ccc; 
+        cursor:pointer;
+    }
+    .hover-star,.click-star {           /*五角星hover click后样式*/
+        color:#f00;
+    }
+  </style>
+
+</head>
+
+<body>
+    <ul>
+        <li>&#9733;</li>
+        <li>&#9733;</li>
+        <li>&#9733;</li>
+        <li>&#9733;</li>
+        <li>&#9733;</li>
+    </ul>
+
+  <script src="//kzcdn.itc.cn/res/skin/js/lib/jquery-2.0.3.min.js"></script>
+  <script>
+        $(function () {
+            $("ul li").hover(function(){
+                $(this).addClass('hover-star');
+                $(this).prevAll().addClass('hover-star');
+            },function(){
+                $(this).removeClass('hover-star');
+                $(this).prevAll().removeClass('hover-star');
+            })
+    
+            $("ul li").click(function () {
+                $(this).addClass('click-star');
+                $(this).prevAll().addClass('click-star');
+                $(this).nextAll().removeClass('click-star');
+            })
+        })
+    </script>
+</body>
+
+</html>
